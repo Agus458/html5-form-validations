@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="form-group col">
-                  <label for="exampleFormControlInput1 ">Amount</label>
+                  <label for="amount ">Amount</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <div class="input-group-text">$</div>
@@ -79,7 +79,7 @@
 
               <div class="row">
                 <div class="form-group col">
-                  <label for="exampleFormControlInput1">First Name</label>
+                  <label for="name">First Name</label>
                   <input
                     type="text"
                     class="form-control"
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="form-group col">
-                  <label for="exampleFormControlInput1">Last Name</label>
+                  <label for="last-name">Last Name</label>
                   <input
                     type="text"
                     class="form-control"
@@ -101,11 +101,11 @@
 
               <div class="row">
                 <div class="form-group col-6">
-                  <label for="exampleFormControlInput1">City</label>
+                  <label for="city">City</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    id="city"
                     placeholder=""
                   />
                 </div>
@@ -114,11 +114,8 @@
                   <label class="mr-sm-2" for="inlineFormCustomSelect"
                     >State</label
                   >
-                  <select
-                    class="custom-select mr-sm-2"
-                    id="inlineFormCustomSelect"
-                  >
-                    <option selected>Pick state</option>
+                  <select class="custom-select mr-sm-2" id="state">
+                    <option value="null" selected>Pick state</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -126,11 +123,11 @@
                 </div>
 
                 <div class="form-group col">
-                  <label for="exampleFormControlInput1">Postal Code</label>
+                  <label for="postal-code">Postal Code</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    id="postal-code"
                     placeholder=""
                   />
                 </div>
@@ -147,6 +144,7 @@
                         name="inlineRadioOptions"
                         id="inlineRadio1"
                         value="option1"
+                        checked
                       />
                       <label class="form-check-label" for="inlineRadio1"
                         ><i class="fab fa-cc-mastercard"></i
@@ -192,10 +190,10 @@
                 </div>
 
                 <div class="form-group col-6">
-                  <label for="exampleFormControlTextarea1">Message</label>
+                  <label for="message">Message</label>
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="message"
                     rows="3"
                   ></textarea>
                   <small id="messageHelp" class="form-text text-muted"

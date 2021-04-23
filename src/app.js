@@ -323,8 +323,157 @@ form.addEventListener("submit", event => {
     }
   }
 
+  // City validation
+  let city = document.getElementById("city");
+  let cityValid = false;
+
+  // Si esta vacio
+  if (validator.isEmpty(city.value)) {
+    // remueve el li anterior
+    let aux = document.getElementById("city-alert");
+    if (aux != null) {
+      aux.remove();
+    }
+
+    // Creacion del li
+    let li = document.createElement("li");
+    li.classList.add("list-group-item");
+    li.innerHTML = "City can't be empty";
+    li.setAttribute("id", "city-alert");
+
+    // Agregado a la lista
+    ul.appendChild(li);
+
+    cityValid = false;
+
+    city.classList.remove("border-success", "text-success");
+    city.classList.add("border-danger", "text-danger");
+  } else {
+    // Si es un dato correcto
+    if (validator.isAlpha(city.value)) {
+      // remueve el li anterior
+      let aux = document.getElementById("city-alert");
+      if (aux != null) {
+        aux.remove();
+      }
+
+      cityValid = true;
+
+      city.classList.remove("border-danger", "text-danger");
+      city.classList.add("border-success", "text-success");
+    } else {
+      // Si no corresponde el tipo de dato
+      // remueve el li anterior
+      let aux = document.getElementById("city-alert");
+      if (aux != null) {
+        aux.remove();
+      }
+
+      // Creacion del li
+      let li = document.createElement("li");
+      li.classList.add("list-group-item");
+      li.innerHTML = "Invalid City";
+      li.setAttribute("id", "city-alert");
+
+      // Agregado a la lista
+      ul.appendChild(li);
+
+      cityValid = false;
+
+      city.classList.remove("border-success", "text-success");
+      city.classList.add("border-danger", "text-danger");
+    }
+  }
+
+  // State validation
+  let state = document.getElementById("state");
+  let stateValid = false;
+
+  // Si esta vacio
+  if (state.value == "null") {
+    // remueve el li anterior
+    let aux = document.getElementById("state-alert");
+    if (aux != null) {
+      aux.remove();
+    }
+
+    // Creacion del li
+    let li = document.createElement("li");
+    li.classList.add("list-group-item");
+    li.innerHTML = "State can't be empty";
+    li.setAttribute("id", "state-alert");
+
+    // Agregado a la lista
+    ul.appendChild(li);
+
+    stateValid = false;
+
+    state.classList.remove("border-success", "text-success");
+    state.classList.add("border-danger", "text-danger");
+  } else {
+    // Si es un dato correcto
+    // remueve el li anterior
+    let aux = document.getElementById("state-alert");
+    if (aux != null) {
+      aux.remove();
+    }
+
+    stateValid = true;
+
+    state.classList.remove("border-danger", "text-danger");
+    state.classList.add("border-success", "text-success");
+  }
+
+  // PostalCode validation
+  let postalCode = document.getElementById("postal-code");
+  let postalCodeValid = false;
+
+  // Si esta vacio
+  if (validator.isEmpty(postalCode.value)) {
+    // remueve el li anterior
+    let aux = document.getElementById("postalCode-alert");
+    if (aux != null) {
+      aux.remove();
+    }
+
+    // Creacion del li
+    let li = document.createElement("li");
+    li.classList.add("list-group-item");
+    li.innerHTML = "Postal Code can't be empty";
+    li.setAttribute("id", "postalCode-alert");
+
+    // Agregado a la lista
+    ul.appendChild(li);
+
+    postalCodeValid = false;
+
+    postalCode.classList.remove("border-success", "text-success");
+    postalCode.classList.add("border-danger", "text-danger");
+  } else {
+    // Si es un dato correcto
+    // remueve el li anterior
+    let aux = document.getElementById("postalCode-alert");
+    if (aux != null) {
+      aux.remove();
+    }
+
+    postalCodeValid = true;
+
+    postalCode.classList.remove("border-danger", "text-danger");
+    postalCode.classList.add("border-success", "text-success");
+  }
+
   // Si todos los datos son correctoss oculta la alerta
-  if (cardValid && cvcValid && amountValid && nameValid && lastNameValid) {
+  if (
+    cardValid &&
+    cvcValid &&
+    amountValid &&
+    nameValid &&
+    lastNameValid &&
+    cityValid &&
+    stateValid &&
+    postalCodeValid
+  ) {
     myAlert.style.display = "none";
   } else {
     myAlert.style.display = "block";
